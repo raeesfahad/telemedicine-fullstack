@@ -3,12 +3,20 @@
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte'
   import { DarkMode } from 'flowbite-svelte';
 	import Footer from '$lib/Footer.svelte';
+ import { page } from '$app/stores';
+ import getHead from '../DyanamicHead';
 
   let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2';
-
+  
+ 
 
 
 </script>
+
+
+<svelte:head>
+    <title>{getHead($page.url.pathname)}</title> 
+</svelte:head>
 
 
 
@@ -19,8 +27,8 @@
       class="mr-3 h-6 sm:h-9"
       alt="Flowbite Logo"
     />
-    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-      TeleMedicine
+    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-neutral">
+      RemoteCare
     </span>
   </NavBrand>
   <div class="flex md:order-2">
@@ -30,12 +38,14 @@
   <NavUl {hidden} class="order-1">
     <NavLi href="/" active={true}>Home</NavLi>
     <NavLi href="/services">Services</NavLi>
-    <NavLi href="/">Doctors</NavLi>
+    <NavLi href="/doctors"> For Doctors</NavLi>
   </NavUl>
 </Navbar>
 
+
+
 <div class=""><slot /></div>
 
-<div class="mt-5"><Footer /></div>
+<div class=""><Footer /></div>
 
 
