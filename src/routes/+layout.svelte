@@ -3,13 +3,10 @@
   import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte'
   import { DarkMode } from 'flowbite-svelte';
 	import Footer from '$lib/Footer.svelte';
- import { page } from '$app/stores';
+  import { page } from '$app/stores';
  import getHead from '../DyanamicHead';
 
   let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2';
-  
- 
-
 
 </script>
 
@@ -20,7 +17,11 @@
 
 
 
-<Navbar let:hidden let:toggle>
+
+<Navbar 
+let:hidden 
+let:toggle
+navClass="px-2 sm:px-4 py-2.5 absolute w-full z-20 top-0 left-0 border-b">
   <NavBrand href="/">
     <img
       src="https://flowbite.com/docs/images/logo.svg"
@@ -36,9 +37,10 @@
     <NavHamburger on:click={toggle} />
   </div>
   <NavUl {hidden} class="order-1">
-    <NavLi href="/" active={true}>Home</NavLi>
-    <NavLi href="/services">Services</NavLi>
-    <NavLi href="/doctors"> For Doctors</NavLi>
+    <NavLi href="/" active={$page.url.pathname === "/" ? true : false}>Home</NavLi>
+    <NavLi href="/services" active={$page.url.pathname === "/services" ? true : false}>Services</NavLi>
+    <NavLi href="/doctors" active={$page.url.pathname === "/doctors" ? true : false}> For Doctors</NavLi>
+    <NavLi href="/login" active={$page.url.pathname === "/login" ? true : false}> Login </NavLi>
   </NavUl>
 </Navbar>
 
