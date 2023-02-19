@@ -1,12 +1,22 @@
-<script lang="ts">
+<script>
 	import '../app.postcss';
-  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte'
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button } from 'flowbite-svelte'
   import { DarkMode } from 'flowbite-svelte';
 	import Footer from '$lib/Footer.svelte';
   import { page } from '$app/stores';
- import getHead from '../DyanamicHead';
+  import getHead from '../DyanamicHead';
+  import { isLoggedIn } from '../store';
 
   let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2';
+ 
+   let LoggedIn;
+
+   isLoggedIn.subscribe( value => {
+
+       LoggedIn = value;
+   })
+
+
 
 </script>
 
@@ -16,6 +26,8 @@
 </svelte:head>
 
 
+{#if $page.url.pathname !== "/dashboard"}
+  
 
 
 <Navbar 
@@ -44,10 +56,22 @@ navClass="px-2 sm:px-4 py-2.5 absolute w-full z-20 top-0 left-0 border-b">
   </NavUl>
 </Navbar>
 
-
-
 <div class=""><slot /></div>
 
 <div class=""><Footer /></div>
+
+
+{:else if $page.url.pathname === "/dashboard" && LoggedIn}
+ 
+<slot />
+
+
+ {:else}
+
+ <h1>Not Logged In</h1>
+ <Button on:click={()=>{isLoggedIn.set(true)}}> {LoggedIn ? "Log Out" : "Login"} </Button>
+
+
+{/if}
 
 

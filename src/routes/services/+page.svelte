@@ -1,5 +1,5 @@
 <section class="text-gray-600 body-font">
-	<div class="container px-5 py-24 mx-auto m-20">
+	<div class="container px-5 py-24 mx-auto mt-12">
 		<div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
 			<h1
 				class="sm:text-3xl text-2xl font-large
