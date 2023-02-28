@@ -1,11 +1,12 @@
 <script lang="ts">
 	import DashboardNav from "$lib/DashboardNav.svelte";
-	import DashboardSideNav from "$lib/DashboardSideNav.svelte";
+	import DashData from "$lib/DashData.svelte";
 
-     export let logged : Boolean
+
 
 
 </script>
 
-<div class=""><DashboardNav loggedIn={logged}/></div>
-<div><DashboardSideNav/></div>
+<div class=""><DashboardNav /></div>
+<div class="flex flex-row">
+</div>

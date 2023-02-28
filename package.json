@@ -30,11 +30,17 @@
 		"prettier-plugin-svelte": "^2.8.1",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
+		"svelte-heros": "^2.9.1",
 		"svelte-preprocess": "^4.10.7",
 		"tailwindcss": "^3.1.5",
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.3",
 		"vite": "^4.0.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@types/chart.js": "^2.9.37",
+		"chart.js": "^4.2.1",
+		"svelte-icons": "^2.1.0"
+	}
 }

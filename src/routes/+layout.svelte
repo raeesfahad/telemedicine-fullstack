@@ -7,13 +7,15 @@
   import getHead from '../DyanamicHead';
   import { isLoggedIn } from '../store';
 
+
+
   let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2';
  
-   let LoggedIn;
+  let LoggedIn;
 
    isLoggedIn.subscribe( value => {
 
-       LoggedIn = value;
+    LoggedIn = value;
    })
 
 
@@ -61,16 +63,9 @@ navClass="px-2 sm:px-4 py-2.5 absolute w-full z-20 top-0 left-0 border-b">
 <div class=""><Footer /></div>
 
 
-{:else if $page.url.pathname === "/dashboard" && LoggedIn}
+{:else if $page.url.pathname === "/dashboard"}
  
 <slot />
-
-
- {:else}
-
- <h1>Not Logged In</h1>
- <Button on:click={()=>{isLoggedIn.set(true)}}> {LoggedIn ? "Log Out" : "Login"} </Button>
-
 
 {/if}
 

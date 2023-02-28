@@ -7,7 +7,7 @@
 <section class="text-gray-600 body-font">
 	<div class=" mt-14 container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
 	  <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-		<h1 class="title-font sm:text-4xl text-4xl mb-4 font-medium font-extrabold text-blue-600 dark:text-neutral-100">Healthcare Professionals Who
+		<h1 class="title-font sm:text-4xl text-4xl mb-4 font-extrabold text-blue-600 dark:text-neutral-100">Healthcare Professionals Who
 		  <br class="hidden lg:inline-block"> Bring Medical Care to Your Doorstep
 		</h1>
 		<p class="mb-8 leading-relaxed dark:text-neutral-100">Telemedicine has emerged as a lifeline for patients who cannot access traditional healthcare
