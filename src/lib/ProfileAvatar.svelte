@@ -5,7 +5,7 @@
 
   </script>
   
-    <Avatar id="user-drop" size="sm">
+    <Avatar id="user-drop" size="sm" src={$user.image}>
     <Dropdown triggeredBy="#user-drop">
       <DropdownHeader>
         <span class="block text-sm"> {$user.first_name} {$user.last_name}</span>
@@ -15,5 +15,5 @@
       <DropdownDivider />
       <DropdownItem>Sign out</DropdownItem>
     </Dropdown>
-    FU
+    
     </Avatar>

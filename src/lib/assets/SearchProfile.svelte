@@ -5,6 +5,7 @@
 
  
     let text = "";
+    let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2 ml-2';
 
 	function search() {
 	
@@ -38,7 +39,7 @@
         <ProfileAvatar />
     </div>
 
-    <DarkMode btnClass={" w-8 h-8 ml-3"}/>
+    <DarkMode btnClass={btnClass}/>
 
     
 </div>
